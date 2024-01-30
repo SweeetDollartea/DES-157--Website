@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+
+<body>
+    <h1>Experiment 2</h1>
+    <h2> What is your favorite color?</h2>
+
+    <div class="kolor" id="yoyo">
+        <p>Hey, My name is Taira Asakura, who created this website</p>
+        <p>My hobbies are playing tennis and practicing mixing music.</p>
+    </div>
+
+    <script>
+
+    function rightcolor(question, colors){
+        for (var i=0;i<colors.length;i++){
+            if (colors[i]===question){
+                return true;
+            }
+        }
+    }
+
+    function backgroundcolor(){
+        var colors = ["red", "blue", "green", "yellow", "black", "white", "orange", "purple"];
+        var question = prompt("Enter a color","");
+
+        if (rightcolor(question, colors)){
+            document.body.style.backgroundColor= question;
+        }
+        else{
+            alert("enter a different color");
+        }
+    }
+
+    backgroundcolor();
+     
+
+
+    </script>
+</body>
+
+</html>
+

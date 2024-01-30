@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Experimentation - Selections & Loops</title>
+</head>
+<body>
+    <h1>Experiment 1</h1>
+    <h2>Once you enter the weather, double click the screen and press "inspect" and click on console</h2>
+
+    <script>
+    var question = prompt ("Describe the weather outside");
+    var answer  = question.toLowerCase();
+    var capanswer = "";
+    
+    for (i=0; i<answer.length; i++){
+        if (i === 0 || answer[i-1] === " "){
+            capanswer += answer[i].toUpperCase();
+        }
+        else {
+            capanswer += answer [i];
+        }
+    }   
+    console.log(capanswer);
+
+    </script>
+
+
+</body>
+</html>
