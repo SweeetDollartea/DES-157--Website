@@ -59,9 +59,11 @@ header {
     border: 1px solid #ddd;
     border-radius: 25px;
     border: solid #73AD21;
-    text-align: center;
     line-height: 1.5;
+}
 
+h3{
+    text-align: center;
 }
 .list ul li:hover {
     background-color: #84e6e8;
