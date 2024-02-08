@@ -6,15 +6,27 @@ body {
     align-items: center;
     position: relative;
     font-family: 'Press Start 2P', system-ui;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
+
+.begin {
+    font-size: 24px;
+    color: white;
+    line-height: 2.5;
+}
+
 
 #background {
     width: 100%;
-    height: auto;
+    height: 100%;
     position: absolute;
     box-sizing: border-box;
-    border-radius: auto;
     z-index: -1;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
 }
 
 .center-box {
@@ -29,10 +41,16 @@ body {
     border-color: aliceblue;
 }
 
-.begin {
-    font-size: 24px;
-    color: white;
-    line-height: 2.5;
+.center-box.hidden{ 
+    width: 900px;
+    height: 600px;
+    border-style: solid;
+    border-color: aliceblue;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 5px;
 }
 
 .button{
@@ -48,7 +66,70 @@ body {
     cursor: pointer;
 }
 
+form button {
+    font-family: 'Press Start 2P', system-ui;
+    background-color: aliceblue;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#yoyo{
+    font-family: 'Press Start 2P', system-ui;
+    background-color: aliceblue;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .hidden{
     display:none;
 }
 
+.finalboxhidden {
+    display: none;
+}
+
+.final-box{
+    text-align: center;
+    width: 800px;
+    height: 600px;
+    background-color: rgb(150, 66, 41);
+    background-size: cover;
+    z-index: 1; 
+    border-style: solid;
+    border-color: aliceblue;
+    color: aliceblue;
+    line-height: 3;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+input[type="text"] {
+    width: 80%; 
+    text-align: center; 
+  }
+
+form input[type="text"] {
+    margin: 5px auto; 
+    padding: 5px; 
+}
+
+#myForm {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+  }
