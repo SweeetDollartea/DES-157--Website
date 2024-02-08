@@ -11,7 +11,7 @@
     });
 
     var form =document.querySelector('form');
-    
+
     form.addEventListener('submit', function(event){
         event.preventDefault();
 
@@ -32,7 +32,7 @@
     const v2 =document.getElementById('verb2').value;
     const ad3 =document.getElementById('adjective3').value;
 
-    let mytext= `The words submitted are ${cn}`;
+    let mytext;
 
     if (cn ==""){
         mytext="please provide a character name";
@@ -84,11 +84,12 @@
         After overcoming obstacles by defeating Koopa Troops and Bowser Jr., ${cn}, confronts ${vn} in a ${ad3} castle.
         Using ${hoh} new power to ${v}, ${cn} defeats ${vn} and rescue Princess ${cn2} becoming a hero of Mushroom Kingdom.`);
        
+    document.getElementById('second-box').style.display = 'none';
+
     const libfinal = document.getElementById('finalbox');
     libfinal.innerHTML=`<p class="final">${mytext}</p>`;
     libfinal.style.display= 'block';
 
-    document.getElementById('second-box').style.display = 'none';
     }
 });
 });
