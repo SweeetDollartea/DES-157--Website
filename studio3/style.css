@@ -16,11 +16,12 @@ body{
         background-position: center; 
         background-size: cover; 
         width: 100vw;
+        height: 100vh;
         height: auto;
     }
 }
 
-#startgame{
+#playgame{
     padding: 10px 20px; 
     font-size: 36px; 
     font-weight: bold; 
@@ -36,7 +37,7 @@ body{
     transition: transform 0.3s ease-in-out;
 }
 
-#startgame:hover{
+#playgame:hover{
     transform: translatey(-5px);
 }
 
@@ -61,10 +62,176 @@ body{
     transform: translateY(-5px);
 }
 
-#score{
-    margin: none;
+#ingame{
+    display: none;
+    font-family: "Oswald", sans-serif;
+    position: fixed; 
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+
+    transform: rotateY(0deg); 
 }
 
-#scoreme{
-    margin: none;
+
+.card-row1{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 1%;
+    left: 0.05%;
 }
+
+/* .card-row2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 19.5%;
+    left: 12.75%;
+} */
+
+.card{
+    width: 12%; 
+    height: auto; 
+    display: block;
+    padding-top: 3%;
+    padding-inline-start: 6.8%;
+    padding-right: 6.8%;
+}
+
+
+#startgame{
+    position: absolute;
+    display: none;
+    cursor: pointer; 
+    text-align: center;
+    transform: translateX(438%);
+    top: 500px;
+
+    
+    padding: 0.65em 1em;
+    border: 3px solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    background-color: rgb(20, 99, 27);
+    transition: all 0.2s;
+    animation: bn13bouncy 5s infinite linear;
+    position: relative;
+
+}
+
+#startgame:hover{
+    background-color: white;
+    color: rgb(20, 99, 27);
+    border-color: rgb(20, 99, 27);
+}
+
+#quit{
+    transform: translateX(10%);
+    padding: 0.65em 1em;
+    border: 3px solid rgb(20, 99, 27);
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: rgb(20, 99, 27);
+    background-color: rgb(255, 255, 255);
+    transition: all 0.2s;
+    animation: bn13bouncy 5s infinite linear;
+    position: relative;
+}
+
+#quit:hover{
+    background-color: rgb(20, 99, 27);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+}
+
+#roll{
+    transform: translateX(10%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(20, 99, 27);
+    backface-visibility: hidden;
+    border: 0.3rem solid transparent;
+    border-radius: 3rem;
+}
+
+#roll:hover{
+    border-color: #000000;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+
+
+  .card-back, .card-front {
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .card-front {
+    display: flex;
+    justify-content: center; 
+    align-items: top;
+    margin: 4%;
+    top: 2%;
+  }
+
+  .card-front img {
+    position: relative;
+    width: 48%; 
+    height: auto; 
+    transform: translateX(118%);
+
+}
+
+.card-front2 {
+    display: flex;
+    justify-content: center; 
+    align-items: top;
+    margin: 4%;
+
+  }
+
+  .card-front2 img {
+    position: relative;
+    width: 108%; 
+    height: auto; 
+    transform: translate(420%,-72%);
+}
+
+
+  .card.flipped .card-back {
+    transform: rotateY(180deg);
+  }
+  .card.flipped .card-front {
+    transform: rotateY(0deg);
+  }
+
+
+
+  #rollagain{
+    transform: translateX(10%);
+
+  }

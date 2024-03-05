@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cards Pig Dice Game</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-<article class="homepage">
+<div class="homepage">
 <img id=home src="images/PIGCardGame.webp"></img>
-<button id="startgame">Start</button>
+<button id="playgame">Start</button>
 <button id="Instruction">Instructions</button>
+</div>
+
+<div id="ingame">
+    <img id="ingame" src = "images/7.png"></img>
+</div>
+
+<article id="gamecontrol">
+    <button id="startgame">Start the Game</button>
 </article>
 
-<article id="ingame">
-    <h2 id="score">Score</h2>
-    <h2 id="scoreme">Opponent's Score</h2>
-</article>
+<div id="game"></div>
+<div id="actions"></div>
+<div id="score"></div>
 
 <article>
 </article>
