@@ -25,6 +25,16 @@
         index: 0,
         gameEnd: 29
     };    
+
+    instructionButton.addEventListener('click', function(){
+            document.getElementById('overlay').style.display = 'block';
+        });
+        
+    document.querySelector('.closeButton').addEventListener('click', function() {
+            document.getElementById('overlay').style.display = 'none';
+        });
+          
+
  
     playButton.addEventListener('click', function(){
         document.getElementById("home").src='images/PigCardGame.png';
@@ -74,7 +84,7 @@
         });
 
     function setUpTurn(){
-        game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
+        game.innerHTML = `<p id="turn">Roll the dice for ${gameData.players[gameData.index]}</p>`;
         actionArea.innerHTML='<button id="roll">Roll the Dice</button>';
         document.getElementById("roll").addEventListener('click', function(){
             throwDice();
@@ -88,7 +98,7 @@
         gameData.roll2 = Math.floor(Math.random()* 6) +1;
 
 
-        game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
+        game.innerHTML = `<p id="turn">Roll the dice for ${gameData.players[gameData.index]}</p>`;
         game.innerHTML += `<div class="card">
             <div class="card-back"><img src="images/7.png" alt="Card Back"></div>
             <div class="card-front"><img src="${gameData.dice[gameData.roll1-1]}" alt="Card Front"></div>
@@ -110,7 +120,7 @@
 
     
         if (gameData.rollSum ===2){
-            game.innerHTML += '<p>oh snap! Snake Eyes!</p>';
+            game.innerHTML += '<p id="switching">oh snap! Snake Eyes!</p>';
             gameData.score[gameData.index]=0;
             gameData.index ? (gameData.index=0) : (gameData.index=1);
             showCurrentScore();
@@ -119,12 +129,12 @@
 
         else if(gameData.roll1 === 1 || gameData.roll2 ===1){
             gameData.index ? (gameData.index =0) : (gameData.index =1);
-            game.innerHTML += `<p>Sorry, one of your rolls was a one, switching to ${gameData.players[gameData.index]} </p>`;
+            game.innerHTML += `<p id= "switching">Sorry, one of your rolls was a one, switching to ${gameData.players[gameData.index]} </p>`;
             setTimeout(setUpTurn,2000);
         } 
         else  {
             gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
-            actionArea.innerHTML='<button id="rollagain">Roll Again</button> or <button id ="pass">Pass</button>';
+            actionArea.innerHTML='<button id="rollagain">Roll Again</button>  <button id ="pass">Pass</button>';
 
             document.getElementById('rollagain').addEventListener('click', function(){
                 throwDice();
@@ -139,22 +149,29 @@
     
     
         function checkwinningcondition(){
+      
             if (gameData.score[gameData.index]>gameData.gameEnd){
-                score.innerHTML= `<h2>${gameData.players[gameData.index]}
+                score.innerHTML= `<h2 id= "win">${gameData.players[gameData.index]}
                 wins with ${gameData.score[gameData.index]} points!</h2>`;
 
                 actionArea.innerHTML='';
                 document.getElementById('quit').innerHTML="start a new game?";
             }
             else {
+
                 showCurrentScore();
-            }
+        }
         }
 
         function showCurrentScore(){
-            score.innerHTML=`<p>The score is currently <strong>${gameData.players[0]}</p>
-            ${gameData.score[0]}</strong> and <strong>${gameData.players[1]}
-            ${gameData.score[1]}</strong></p>`;
+            // score.innerHTML=`<p id="score"><strong>${gameData.players[0]}</p>
+            // ${gameData.score[0]}</strong><strong>${gameData.players[1]}
+            // ${gameData.score[1]}</strong></p>`;
+
+            score.innerHTML=`<p id="score">
+            <strong class="score1">${gameData.score[0]}</strong>
+            <strong class="score2">${gameData.score[1]}</strong>
+            </p>`;
         }
 });
 })();

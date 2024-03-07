@@ -51,11 +51,11 @@ body{
     border-color: rgb(0, 0, 0);
     border-radius: 15px; 
     cursor: pointer; 
-    transition: background-color 0.3s ease;
+    /* transition: background-color 0.3s ease; */
     margin: 6px;
     margin-right: 25%;
     margin-top: 10%;
-    transition: transform 0.3s ease-in-out;
+    /* transition: transform 0.3s ease-in-out; */
 }
 
 #Instruction:hover{
@@ -148,6 +148,10 @@ body{
     transition: all 0.2s;
     animation: bn13bouncy 5s infinite linear;
     position: relative;
+
+    top: 590px;
+    left:1250px;
+
 }
 
 #quit:hover{
@@ -157,11 +161,14 @@ body{
 }
 
 #roll{
-    transform: translateX(10%);
-    display: inline-flex;
+    position: absolute;
+    transform: translateX(293%);
+    display: flex;
+
+
     align-items: center;
     justify-content: center;
-    padding: 0.7rem 2rem;
+    /* padding: 0.7rem 2rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-size: 18px;
@@ -170,12 +177,29 @@ body{
     color: rgb(20, 99, 27);
     backface-visibility: hidden;
     border: 0.3rem solid transparent;
-    border-radius: 3rem;
+    border-radius: 3rem; */
+    padding: 17px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+
+
+    
+    top: 580px;
 }
 
 #roll:hover{
     border-color: #000000;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+    /* transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95); */
+    background-color: hsl(133, 52%, 36%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(224, 229, 226) 0px 7px 29px 0px;
 }
 
 
@@ -229,9 +253,155 @@ body{
     transform: rotateY(0deg);
   }
 
+  #score{
+    position: absolute;
+  }
 
-
-  #rollagain{
+  .score1{
     transform: translateX(10%);
+    position: relative;
+    color: #ffffff;
+    font-size: 72px;
+    
+    top: -150px;
+    left: 190px;
+ 
+  }
+
+  .score2{
+    display: block;
+    transform: translateX(10%);
+    position: relative;
+    color: #ffffff;
+    font-size: 72px;
+
+    top: -230px;
+    left: 1210px;
+  }
+
+
+  #turn{
+    color: #ffffff;
+    position: relative;
+    left: 30px;
+    top: 480px;
 
   }
+
+  #switching{
+    color: #ffffff;
+    position: absolute;
+
+    left: 30px;
+    bottom: 110px;
+
+  }
+
+#rollagain{
+    transform: translateX(10%);
+    position: absolute;
+    
+    padding: 17px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+
+    left:500px;
+    bottom: 100px;
+  }
+
+#rollagain:hover{
+  letter-spacing: 3px;
+  background-color: hsl(133, 52%, 36%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(224, 229, 226) 0px 7px 29px 0px;
+}
+
+#pass{
+    transform: translateX(10%);
+
+    padding: 17px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+
+    position: absolute;
+    left: 750px;
+    bottom: 100px;
+  }
+
+  #pass:hover{
+    letter-spacing: 3px;
+    background-color: hsl(133, 52%, 36%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(224, 229, 226) 0px 7px 29px 0px;
+  }
+
+  #win{
+    color: #ffffff;
+    position: relative;
+    left: 30px;
+    top: 180px;
+
+  }
+
+
+  .overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+  
+
+.overlayContent {
+  position: relative;
+  top: 25%;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  cursor: auto;
+  background-color: rgb(228, 206, 224);
+}
+
+.overlayContent h2{
+  text-align: center;
+  text-decoration: underline;
+
+}
+
+.overlayContent p{
+  text-align: center;
+  line-height: 2;
+
+  
+}
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
