@@ -6,6 +6,11 @@
     const instructionButton = document.getElementById('Instruction');
     const inGameArticle = document.getElementById('ingame');
 
+    //audio
+    const mixcards =document.getElementById('mix');
+    const musicbackground =document.getElementById("backgroundmusi");
+    const winwin =document.getElementById("winwin");
+
     const images =
     ['images/PigCardGame-1.png'];
 
@@ -26,6 +31,8 @@
         gameEnd: 29
     };    
 
+
+
     instructionButton.addEventListener('click', function(){
             document.getElementById('overlay').style.display = 'block';
         });
@@ -33,10 +40,13 @@
     document.querySelector('.closeButton').addEventListener('click', function() {
             document.getElementById('overlay').style.display = 'none';
         });
-          
+    
 
- 
     playButton.addEventListener('click', function(){
+        musicbackground.play();
+        musicbackground.volume=0.3;
+        musicbackground.loop=true;
+
         document.getElementById("home").src='images/PigCardGame.png';
 
         playButton.style.display = "none";
@@ -120,17 +130,25 @@
 
     
         if (gameData.rollSum ===2){
+            setTimeout(function(){
+                mixcards.play();
+                setUpTurn();
+            },1000);
             game.innerHTML += '<p id="switching">oh snap! Snake Eyes!</p>';
             gameData.score[gameData.index]=0;
             gameData.index ? (gameData.index=0) : (gameData.index=1);
             showCurrentScore();
-            setTimeout(setUpTurn,2000);
+        
         }
 
         else if(gameData.roll1 === 1 || gameData.roll2 ===1){
             gameData.index ? (gameData.index =0) : (gameData.index =1);
+            setTimeout(function(){
+                mixcards.play();
+                setUpTurn();
+            },1000);
+
             game.innerHTML += `<p id= "switching">Sorry, one of your rolls was a one, switching to ${gameData.players[gameData.index]} </p>`;
-            setTimeout(setUpTurn,2000);
         } 
         else  {
             gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
@@ -153,9 +171,10 @@
             if (gameData.score[gameData.index]>gameData.gameEnd){
                 score.innerHTML= `<h2 id= "win">${gameData.players[gameData.index]}
                 wins with ${gameData.score[gameData.index]} points!</h2>`;
-
+                winwin.play();
                 actionArea.innerHTML='';
                 document.getElementById('quit').innerHTML="start a new game?";
+                startGame.style.display='none';
             }
             else {
 
