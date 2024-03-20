@@ -47,7 +47,7 @@
         musicbackground.volume=0.3;
         musicbackground.loop=true;
 
-        document.getElementById("home").src='images/PigCardGame.png';
+        document.getElementById("home").src='images/PigCardGame1.png';
 
         playButton.style.display = "none";
         instructionButton.style.display = "none";

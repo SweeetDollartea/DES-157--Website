@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Pig Dice Game</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="homepage">
+    <img id=home src="images/PIGCardGame.webp" alt = "homescreen">
+
+    <button id="playgame">Start</button>
+    <button id="Instruction">Instructions</button>
+</div>
+
+<div id="ingame">
+    <img id="ingame2" src = "images/7.png" alt = "ingame3">
+</div>
+
+<audio id = "mix" src="sounds/mixcards.wav"></audio>
+<audio id = "backgroundmusi" src="sounds/backgroundmusi.mp3"></audio>
+<audio id = "winwin" src="sounds/winwin.wav"></audio>
+
+<article id="gamecontrol">
+    <button id="startgame">Start the Game</button>
+</article>
+
+<div id="playerScores">
+    <div><span id="player1Score">0</span></div>
+    <div><span id="player2Score">0</span></div>
+</div>
+
+<div id="overlay" class="overlay">
+    <div class="overlayContent">
+        <span class="closeButton">&times;</span>
+        <h2>Instructions</h2>
+        <p>You will be randomly assigned if Player 1 or Player 2 gets to start the round first.<br>
+            The Player rolls the die and adds up the numbers after each roll.<br>
+            The Player may stop rolling at any time and end the turn.<br>
+            If the player rolls one "A", it switches to the other Player.<br>
+            The Player will lose all points for the turn when a two "A"s is rolled.<br>
+            Player wins if they score 30 points or more.
+             </p>
+    </div>
+</div>
+
+<div id="game">
+</div>
+<div id="actions"></div>
+<div id="score"></div>
+
+<div class="card">
+    <div class="card-inner">
+        <div class="card-front">
+            <img src="images/1.png" alt="ace">
+            <img src="images/2.png" alt="two">
+            <img src="images/3.png" alt="three">
+            <img src="images/4.png" alt="four">
+            <img src="images/5.png" alt="five">
+            <img src="images/6.png" alt="six">
+        </div>
+        <div class="card-back">
+            <img src="images/7.png" alt="back">
+
+        </div>
+    </div>
+</div>
+
+<article>
+</article>
+
+</body>
+
+</html>

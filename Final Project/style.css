@@ -1,0 +1,409 @@
+body{
+    height: 100%;
+    overflow: hidden;
+}
+
+#home{
+    position: fixed; 
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@media (max-width: 1000px) {
+    .homepage img{
+        background-position: center; 
+        background-size: cover; 
+        width: 100vw;
+        height: 100vh;
+        height: auto;
+    }
+}
+
+#playgame{
+  
+    padding: 10px 20px; 
+    font-size: 36px; 
+    font-weight: bold; 
+    color: white; 
+    background-color: rgb(30, 154, 185); 
+    border: 2px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 15px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    margin-left: 40%;
+    margin-top:45%;
+    transition: transform 0.3s ease-in-out;
+}
+
+#playgame:hover{
+    transform: translatey(-5px);
+}
+
+#Instruction{
+    padding: 10px 20px; 
+    font-size: 36px; 
+    font-weight: bold; 
+    color: white; 
+    background-color: rgb(30, 154, 185); 
+    border: 2px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 15px; 
+    cursor: pointer; 
+    margin: 6px;
+    margin-right: 25%;
+    margin-top: 10%;
+}
+
+#Instruction:hover{
+    transform: translateY(-5px);
+}
+
+#ingame{
+    display: none;
+    font-family: "Oswald", sans-serif;
+    position: fixed; 
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+
+    transform: rotateY(0deg); 
+}
+
+
+.card-row1{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5%;
+}
+
+.card-row2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5%;
+}
+
+#startgame{
+    position: absolute;
+    display: none;
+    cursor: pointer; 
+    text-align: center;
+    transform: translateX(438%);
+    top: 500px;
+
+    
+    padding: 0.65em 1em;
+    border: 3px solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    background-color: rgb(20, 99, 27);
+    transition: all 0.2s;
+    animation: bn13bouncy 5s infinite linear;
+    position: relative;
+
+}
+
+#startgame:hover{
+    background-color: white;
+    color: rgb(20, 99, 27);
+    border-color: rgb(20, 99, 27);
+}
+
+
+
+#quit{
+  position: relative;
+  color: #DAA06D;
+  padding: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  border: 5px dashed rgb(218,165,32);
+  border-radius: 15px;
+  background-color: #000000;
+  transition: .1s ease-in-out, .4s color;
+  font-family: "Limelight", sans-serif;
+  top: 590px;
+  left:1150px;
+}
+
+#quit:active {
+  transform: translateX(0.1em) translateY(0.1em);
+  box-shadow: 0 0 0 4px #EADDCA, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+#roll:hover{
+    border-color: #000000;
+    background-color: hsl(133, 52%, 36%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(224, 229, 226) 0px 7px 29px 0px;
+}
+
+
+.card{
+  width: 12%; 
+  height: auto; 
+  display: block;
+  margin: 2.2%;
+  perspective: 1000px; 
+}
+
+.card:hover{
+  border: 2px solid white;
+}
+
+.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s; 
+  cursor: pointer;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-back, .card-front {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+.card-back{
+  transform: rotateY(180deg);
+  border: 2px solid transparent;
+  }
+
+.card-front {
+    display: flex;
+    justify-content: center; 
+    margin: 4%;
+    top: 2%;
+    transform: rotateY(180deg);
+  }
+
+
+
+
+
+
+.card-front img {
+    position: relative;
+    width: 48%; 
+    height: auto; 
+    transform: translateX(118%);
+
+}
+
+.card-front2 {
+    display: flex;
+    justify-content: center; 
+    margin: 4%;
+  }
+
+  .card-front2 img {
+    position: relative;
+    width: 108%; 
+    height: auto; 
+    transform: translate(420%,-72%);
+}
+
+
+  /* #score{
+    position:absolute;
+    font-size: 72px;
+    color: #ffffff;
+    transform: translate(20%,60%);
+    letter-spacing: 300px;
+  } */
+
+
+  /* .score1{
+    position: relative;
+    color: #ffffff;
+    font-size: 72px;
+    transform: translate(405%,30%);
+  }
+
+  .score2{
+    position: relative;
+    color: #ffffff;
+    font-size: 72px;
+    transform: translate(85%,360%);
+  }
+ */
+
+
+
+  #playerScores div {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+  #player1Score{
+    display: none;
+    position: relative;
+    color: #ffffff;
+    font-size: 72px;
+    transform: translate(85%,360%);
+  }
+
+  #player2Score{
+    display: none;
+    position: relative;
+    color: #ffffff;
+    font-size: 72px;
+    transform: translate(12%,250%);
+  }
+
+
+  #turn{
+    color: #ffffff;
+    position: relative;
+    font-size: 32px;
+    transform: translate(32%, -525%);
+  }
+
+  #turn1{
+    color: #ffffff;
+    position: relative;
+    font-size: 32px;
+    transform: translate(37%, -525%);
+  }
+
+  #switching{
+    display: block;
+    color: #ffffff;
+    position: relative;
+
+    transform: translate(100%, 10%);
+
+
+  }
+
+#rollagain{
+    transform: translateX(10%);
+    position: absolute;
+    
+    padding: 17px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+
+    left:500px;
+    bottom: 100px;
+  }
+
+#rollagain:hover{
+  letter-spacing: 3px;
+  background-color: hsl(133, 52%, 36%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(224, 229, 226) 0px 7px 29px 0px;
+}
+
+#pass{
+  outline:#FFD700;
+  color: #DAA06D;
+  padding: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  border:   5px dashed rgb(218,165,32); 
+  border-radius: 15px;
+  background-color: #000000;
+  transition: .1s ease-in-out, .4s color;
+  font-family: "Limelight", sans-serif;
+    
+  transform: translateX(10%);
+  position: absolute;
+  left: 635px;
+  bottom: -15px;
+  }
+
+  #pass:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: 0 0 0 4px #EADDCA, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+  }
+
+
+  #win{
+    color: #ffffff;
+    position: relative;
+    left: 400px;
+    top: 100px;
+    font-size: 55px;
+  }
+
+
+
+  .overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+  
+
+.overlayContent {
+  position: relative;
+  top: 25%;
+  width: 40%;
+  margin: auto;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  cursor: auto;
+  background-color: rgb(228, 206, 224);
+}
+
+.overlayContent h2{
+  text-align: center;
+  text-decoration: underline;
+
+}
+
+.overlayContent p{
+  text-align: left;
+  line-height: 2;
+  margin-left: 5%;
+  
+}
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
